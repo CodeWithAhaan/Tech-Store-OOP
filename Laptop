@@ -1,0 +1,31 @@
+package ChallengeQ;
+
+public class Laptop extends Product {
+	private int ram;
+	private static int count = 0;
+	
+	public Laptop (String name, double price, int ram) {
+		super(name, price);
+		this.ram = ram;
+		count++;
+	}
+	
+	public Laptop (String name, double price) {
+		this(name, price, 8);
+	}
+	
+	@Override
+	public double discountPrice() {
+		return getPrice() - getPrice()*0.1; //10% discount 
+	}
+	
+	@Override
+	public void info() {
+		super.info();
+		System.out.println("Ram: "+ ram);
+	}
+	
+	public static int getCount() {
+		return count;
+	}
+}
