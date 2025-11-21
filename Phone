@@ -1,0 +1,21 @@
+package ChallengeQ;
+
+public class Phone extends Product{
+	private String carrier;
+	
+	public Phone(String name, double price , String carrier) {
+		super(name, price);
+		this.carrier = carrier;
+	}
+	
+	@Override
+	public double discountPrice() {
+		return getPrice() * 0.95;
+	}
+	
+	@Override
+	public void info() {
+		super.info();
+		System.out.println("Carrier: "+ carrier);
+	}
+}
